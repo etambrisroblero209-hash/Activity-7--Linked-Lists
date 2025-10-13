@@ -1,13 +1,13 @@
 # Activity-7--Linked-Lists
 
-Task: Code
+Task: Create a linked list in C++, add nodes and delete nodes at the start of the list. Code: 
 #include <iostream>
 #include <string>
 #include <iomanip>
 
 using namespace std;
 
-// The 'item' class is perfectly fine and is used for the node data
+// The item class used for the node data
 class item{
 private:
     string name;
@@ -26,7 +26,7 @@ public:
     }
 };
 
-// The 'Node' struct is perfectly fine
+
 struct Node {
     item* data;
     Node* next;
@@ -42,7 +42,7 @@ private:
 public:
     shopping_Cart() { head = nullptr; }
 
-    // MODIFIED: Adds a node at the START (head) of the list
+    // Adds a node at the START (head) of the list
     void add_item_at_start(item* item) {
         Node* newNode = new Node(item);
         newNode->next = head; // New node points to the current head
@@ -50,7 +50,7 @@ public:
         cout << "Added '" << item->get_name() << "' to the START of the cart." << endl;
     }
 
-    // MODIFIED: Deletes the node at the START (head) of the list
+    // Deletes the node at the START (head) of the list
     void delete_item_at_start() {
         if (!head) {
             cout << "Cart is empty, nothing to delete." << endl;
@@ -73,7 +73,7 @@ public:
             cout << "Shopping Cart: EMPTY" << endl;
             return;
         }
-        cout << "\n--- Shopping Cart (Start to End) ---" << endl;
+        cout << " Shopping Cart (Start to End) ---" << endl;
         while (current) {
             current->data->print_item();
             current = current->next;
